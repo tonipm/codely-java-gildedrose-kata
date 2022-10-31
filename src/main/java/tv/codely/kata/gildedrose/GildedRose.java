@@ -23,6 +23,7 @@ class GildedRose {
           if (item.sellIn < 0) {
             increaseQuality(item);
           }
+          break;
         case ITEM_BACKSTAGE_PASSES_NAME:
           increaseQuality(item);
 
@@ -33,7 +34,7 @@ class GildedRose {
             increaseQuality(item);
           }
           if (item.sellIn < 0) {
-            item.quality = 0;
+            resetQuality(item);
           }
           break;
         case ITEM_SULFURAS_PASSES_NAME:
@@ -45,6 +46,10 @@ class GildedRose {
           }
       }
     }
+  }
+
+  private void resetQuality(Item item) {
+    item.quality = 0;
   }
 
   private void increaseQuality(Item item) {
