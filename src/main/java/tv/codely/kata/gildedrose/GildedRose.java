@@ -25,32 +25,44 @@ class GildedRose {
       }
       switch (item.name) {
         case ITEM_AGED_BRIE_NAME:
-          increaseQuality(item);
-
-          if (item.sellIn < ITEM_AGED_BRIE_INCREASE_QUALITY_THRESHOLD) {
-            increaseQuality(item);
-          }
+          updateAgedBrieQuality(item);
         case ITEM_BACKSTAGE_PASSES_NAME:
-          increaseQuality(item);
-
-          if (item.sellIn < ITEM_BACKSTAGE_PASSES_INCREASE_QUALITY_01_THRESHOLD) {
-            increaseQuality(item);
-          }
-          if (item.sellIn < ITEM_BACKSTAGE_PASSES_INCREASE_QUALITY_02_THRESHOLD) {
-            increaseQuality(item);
-          }
-          if (item.sellIn < ITEM_BACKSTAGE_PASSES_RESET_QUALITY_THRESHOLD) {
-            item.quality = 0;
-          }
+          updateBackstagePassesQuality(item);
           break;
         case ITEM_SULFURAS_PASSES_NAME:
           break;
         default:
-          decreaseQuality(item);
-          if (item.sellIn < ITEM_DECREASE_SELL_IN_THRESHOLD) {
-            decreaseQuality(item);
-          }
+          updateDefaultItemQuality(item);
       }
+    }
+  }
+
+  private void updateAgedBrieQuality(Item item) {
+    increaseQuality(item);
+
+    if (item.sellIn < ITEM_AGED_BRIE_INCREASE_QUALITY_THRESHOLD) {
+      increaseQuality(item);
+    }
+  }
+
+  private void updateBackstagePassesQuality(Item item) {
+    increaseQuality(item);
+
+    if (item.sellIn < ITEM_BACKSTAGE_PASSES_INCREASE_QUALITY_01_THRESHOLD) {
+      increaseQuality(item);
+    }
+    if (item.sellIn < ITEM_BACKSTAGE_PASSES_INCREASE_QUALITY_02_THRESHOLD) {
+      increaseQuality(item);
+    }
+    if (item.sellIn < ITEM_BACKSTAGE_PASSES_RESET_QUALITY_THRESHOLD) {
+      item.quality = 0;
+    }
+  }
+
+  private void updateDefaultItemQuality(Item item) {
+    decreaseQuality(item);
+    if (item.sellIn < ITEM_DECREASE_SELL_IN_THRESHOLD) {
+      decreaseQuality(item);
     }
   }
 
