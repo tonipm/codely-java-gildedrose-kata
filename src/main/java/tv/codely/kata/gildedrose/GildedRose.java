@@ -56,7 +56,7 @@ class GildedRose {
       increaseQuality(item);
     }
     if (item.sellIn < ITEM_BACKSTAGE_PASSES_RESET_QUALITY_THRESHOLD) {
-      item.quality = 0;
+      resetQuality(item);
     }
   }
 
@@ -65,6 +65,10 @@ class GildedRose {
     if (item.sellIn < ITEM_DECREASE_SELL_IN_THRESHOLD) {
       decreaseQuality(item);
     }
+  }
+
+  private void resetQuality(Item item) {
+    item.quality = 0;
   }
 
   private void increaseQuality(Item item) {
