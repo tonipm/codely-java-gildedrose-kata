@@ -5,6 +5,13 @@ class GildedRose {
   private static final String ITEM_AGED_BRIE_NAME = "Aged Brie";
   private static final String ITEM_BACKSTAGE_PASSES_NAME = "Backstage passes to a TAFKAL80ETC concert";
   private static final String ITEM_SULFURAS_PASSES_NAME = "Sulfuras, Hand of Ragnaros";
+  private static final int ITEM_DECREASE_SELL_IN_THRESHOLD = 0;
+  private static final int ITEM_AGED_BRIE_INCREASE_QUALITY_THRESHOLD = 0;
+  private static final int ITEM_BACKSTAGE_PASSES_RESET_QUALITY_THRESHOLD = 0;
+  private static final int ITEM_BACKSTAGE_PASSES_INCREASE_QUALITY_01_THRESHOLD = 10;
+  private static final int ITEM_BACKSTAGE_PASSES_INCREASE_QUALITY_02_THRESHOLD = 5;
+  private static final int ITEM_MIN_QUALITY = 0;
+  private static final int ITEM_MAX_QUALITY = 50;
   private final Item[] items;
 
   public GildedRose(Item[] items) {
@@ -20,19 +27,19 @@ class GildedRose {
         case ITEM_AGED_BRIE_NAME:
           increaseQuality(item);
 
-          if (item.sellIn < 0) {
+          if (item.sellIn < ITEM_AGED_BRIE_INCREASE_QUALITY_THRESHOLD) {
             increaseQuality(item);
           }
         case ITEM_BACKSTAGE_PASSES_NAME:
           increaseQuality(item);
 
-          if (item.sellIn < 10) {
+          if (item.sellIn < ITEM_BACKSTAGE_PASSES_INCREASE_QUALITY_01_THRESHOLD) {
             increaseQuality(item);
           }
-          if (item.sellIn < 5) {
+          if (item.sellIn < ITEM_BACKSTAGE_PASSES_INCREASE_QUALITY_02_THRESHOLD) {
             increaseQuality(item);
           }
-          if (item.sellIn < 0) {
+          if (item.sellIn < ITEM_BACKSTAGE_PASSES_RESET_QUALITY_THRESHOLD) {
             item.quality = 0;
           }
           break;
@@ -40,7 +47,7 @@ class GildedRose {
           break;
         default:
           decreaseQuality(item);
-          if (item.sellIn < 0) {
+          if (item.sellIn < ITEM_DECREASE_SELL_IN_THRESHOLD) {
             decreaseQuality(item);
           }
       }
@@ -48,13 +55,13 @@ class GildedRose {
   }
 
   private void increaseQuality(Item item) {
-    if (item.quality < 50) {
+    if (item.quality < ITEM_MAX_QUALITY) {
       item.quality += 1;
     }
   }
 
   private void decreaseQuality(Item item) {
-    if (item.quality > 0) {
+    if (item.quality > ITEM_MIN_QUALITY) {
       item.quality -= 1;
     }
   }
