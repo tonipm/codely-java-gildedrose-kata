@@ -24,6 +24,7 @@ class GildedRose {
         case ITEM_AGED_BRIE_NAME:
           decreaseSellIn(item);
           updateAgedBrieQuality(item);
+          break;
         case ITEM_BACKSTAGE_PASSES_NAME:
           decreaseSellIn(item);
           updateBackstagePassesQuality(item);
