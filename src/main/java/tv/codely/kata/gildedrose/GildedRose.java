@@ -13,19 +13,19 @@ class GildedRose {
 
   public void updateQuality() {
     for (Item item : items) {
-      if (!item.name.equals(ITEM_SULFURAS_PASSES_NAME)) {
-        decreaseSellIn(item);
-      }
       switch (item.name) {
         case ITEM_AGED_BRIE_NAME:
+          decreaseSellIn(item);
           updateAgedBrieQuality(item);
           break;
         case ITEM_BACKSTAGE_PASSES_NAME:
+          decreaseSellIn(item);
           updateBackstagePassesQuality(item);
           break;
         case ITEM_SULFURAS_PASSES_NAME:
           break;
         default:
+          decreaseSellIn(item);
           updateDefaultItemQuality(item);
       }
     }
