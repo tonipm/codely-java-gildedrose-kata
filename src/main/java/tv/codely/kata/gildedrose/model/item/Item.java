@@ -1,11 +1,9 @@
-package tv.codely.kata.gildedrose;
+package tv.codely.kata.gildedrose.model.item;
 
 public class Item {
 
     public String name;
-
     public int sellIn;
-
     public int quality;
 
     public Item(String name, int sellIn, int quality) {

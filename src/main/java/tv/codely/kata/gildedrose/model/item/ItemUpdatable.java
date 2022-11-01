@@ -1,4 +1,6 @@
-package tv.codely.kata.gildedrose;
+package tv.codely.kata.gildedrose.model.item;
+
+import tv.codely.kata.gildedrose.model.item.Item;
 
 final public class ItemUpdatable extends Item {
 
