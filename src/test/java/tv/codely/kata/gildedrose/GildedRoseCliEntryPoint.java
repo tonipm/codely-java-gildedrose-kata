@@ -1,5 +1,7 @@
 package tv.codely.kata.gildedrose;
 
+import tv.codely.kata.gildedrose.model.item.Item;
+
 public class GildedRoseCliEntryPoint {
     public static void main(String[] args) {
         System.out.println("OMGHAI!");

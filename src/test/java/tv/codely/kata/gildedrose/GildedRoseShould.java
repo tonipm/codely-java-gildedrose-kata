@@ -3,6 +3,7 @@ package tv.codely.kata.gildedrose;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
+import tv.codely.kata.gildedrose.model.item.Item;
 
 public class GildedRoseShould {
     private Item[] arrayWith(Item item) {
