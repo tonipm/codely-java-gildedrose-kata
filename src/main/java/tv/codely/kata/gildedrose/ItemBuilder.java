@@ -1,9 +1,10 @@
-package tv.codely.kata.gildedrose.item;
+package tv.codely.kata.gildedrose;
 
 public final class ItemBuilder {
 
- public static Item from(final String rawName, final int sellIn, final int quality) {
+ public static Item from(final String rawName, final int rawSellIn, final int quality) {
   ItemName name = new ItemName(rawName);
+  ItemSellIn sellIn = new ItemSellIn(rawSellIn);
 
   if (name.isAgedBrie()) return new AgedBrie(name, sellIn, quality);
   if (name.isBackstagePasses()) return new BackstagePasses(name, sellIn, quality);

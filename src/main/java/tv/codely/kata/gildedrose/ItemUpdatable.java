@@ -1,14 +1,14 @@
-package tv.codely.kata.gildedrose.item;
+package tv.codely.kata.gildedrose;
 
 abstract class ItemUpdatable implements Item {
   private static final int MIN_QUALITY = 0;
   private static final int MAX_QUALITY = 50;
 
   private final ItemName name;
-  private int sellIn;
+  private ItemSellIn sellIn;
   private int quality;
 
-  public ItemUpdatable(final ItemName name, final int sellIn, final int quality) {
+  public ItemUpdatable(final ItemName name, final ItemSellIn sellIn, final int quality) {
     this.name = name;
     this.sellIn = sellIn;
     this.quality = quality;
@@ -17,7 +17,7 @@ abstract class ItemUpdatable implements Item {
   public abstract void update();
 
   @Override
-  public int sellIn() {
+  public ItemSellIn sellIn() {
     return this.sellIn;
   }
 
@@ -43,7 +43,11 @@ abstract class ItemUpdatable implements Item {
   }
 
   void decreaseSellIn() {
-    this.sellIn -= 1;
+    sellIn = sellIn.decrease();
+  }
+
+  boolean hasToBeSoldInLessThan(Integer days) {
+    return sellIn.isLessThan(days);
   }
 
   @Override

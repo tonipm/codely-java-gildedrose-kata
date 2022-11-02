@@ -1,10 +1,10 @@
-package tv.codely.kata.gildedrose.item;
+package tv.codely.kata.gildedrose;
 
 final class ItemDefault extends ItemUpdatable {
 
   private static final int DECREASE_QUALITY_THRESHOLD = 0;
 
-  ItemDefault(final ItemName name, int sellIn, int quality) {
+  ItemDefault(final ItemName name, ItemSellIn sellIn, int quality) {
     super(name, sellIn, quality);
   }
 
@@ -12,7 +12,8 @@ final class ItemDefault extends ItemUpdatable {
   public void update() {
     decreaseSellIn();
     decreaseQuality();
-    if (sellIn() < DECREASE_QUALITY_THRESHOLD) {
+
+    if (hasToBeSoldInLessThan(DECREASE_QUALITY_THRESHOLD)) {
       decreaseQuality();
     }
   }

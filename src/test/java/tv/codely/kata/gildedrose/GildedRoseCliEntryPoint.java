@@ -1,8 +1,5 @@
 package tv.codely.kata.gildedrose;
 
-import tv.codely.kata.gildedrose.item.Item;
-import tv.codely.kata.gildedrose.item.ItemBuilder;
-
 public class GildedRoseCliEntryPoint {
     public static void main(String[] args) {
         System.out.println("OMGHAI!");

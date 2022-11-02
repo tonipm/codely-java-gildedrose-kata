@@ -3,8 +3,6 @@ package tv.codely.kata.gildedrose;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
-import tv.codely.kata.gildedrose.item.Item;
-import tv.codely.kata.gildedrose.item.ItemBuilder;
 
 public class GildedRoseShould {
     private Item[] arrayWith(Item item) {
@@ -18,7 +16,8 @@ public class GildedRoseShould {
         GildedRose gildedRose = new GildedRose(arrayWith(whateverItem));
         gildedRose.updateQuality();
 
-        assertEquals(whateverItem.sellIn(), 9);
+        final ItemSellIn expectedSellIn = new ItemSellIn(9);
+        assertEquals(whateverItem.sellIn(), expectedSellIn);
     }
 
     @Test
@@ -78,8 +77,9 @@ public class GildedRoseShould {
         GildedRose gildedRose = new GildedRose(arrayWith(sulfuras));
         gildedRose.updateQuality();
 
+        final ItemSellIn expectedSellIn = new ItemSellIn(0);
         assertEquals(sulfuras.quality(), 25);
-        assertEquals(sulfuras.sellIn(), 0);
+        assertEquals(sulfuras.sellIn(), expectedSellIn);
     }
 
     @Test
