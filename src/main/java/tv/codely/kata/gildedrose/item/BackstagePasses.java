@@ -6,7 +6,7 @@ final class BackstagePasses extends ItemUpdatable {
     private static final int INCREASE_QUALITY_02_THRESHOLD = 5;
     private static final int RESET_QUALITY_THRESHOLD = 0;
 
-    BackstagePasses(final String name, final int sellIn, final int quality) {
+    BackstagePasses(final ItemName name, final int sellIn, final int quality) {
       super(name, sellIn, quality);
     }
 
