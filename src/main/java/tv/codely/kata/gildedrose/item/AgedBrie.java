@@ -1,4 +1,4 @@
-package tv.codely.kata.gildedrose.model.item;
+package tv.codely.kata.gildedrose.item;
 
 final class AgedBrie extends ItemUpdatable {
 

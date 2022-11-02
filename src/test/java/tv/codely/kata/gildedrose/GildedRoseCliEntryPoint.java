@@ -1,7 +1,7 @@
 package tv.codely.kata.gildedrose;
 
-import tv.codely.kata.gildedrose.model.item.Item;
-import tv.codely.kata.gildedrose.model.item.ItemBuilder;
+import tv.codely.kata.gildedrose.item.Item;
+import tv.codely.kata.gildedrose.item.ItemBuilder;
 
 public class GildedRoseCliEntryPoint {
     public static void main(String[] args) {

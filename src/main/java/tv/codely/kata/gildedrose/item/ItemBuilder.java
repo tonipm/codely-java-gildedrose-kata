@@ -1,4 +1,4 @@
-package tv.codely.kata.gildedrose.model.item;
+package tv.codely.kata.gildedrose.item;
 
 public final class ItemBuilder {
  private static final String AGED_BRIE = "Aged Brie";
