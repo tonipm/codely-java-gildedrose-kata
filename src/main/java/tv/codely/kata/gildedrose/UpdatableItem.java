@@ -1,12 +1,12 @@
 package tv.codely.kata.gildedrose;
 
-abstract class ItemUpdatable implements Item {
+abstract class UpdatableItem implements Item {
 
   private final ItemName name;
   private ItemSellIn sellIn;
   private ItemQuality quality;
 
-  public ItemUpdatable(final ItemName name, final ItemSellIn sellIn, final ItemQuality quality) {
+  public UpdatableItem(final ItemName name, final ItemSellIn sellIn, final ItemQuality quality) {
     this.name = name;
     this.sellIn = sellIn;
     this.quality = quality;
