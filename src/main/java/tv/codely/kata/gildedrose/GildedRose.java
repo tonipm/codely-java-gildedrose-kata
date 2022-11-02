@@ -1,6 +1,6 @@
 package tv.codely.kata.gildedrose;
 
-import tv.codely.kata.gildedrose.model.item.Item;
+import tv.codely.kata.gildedrose.item.Item;
 
 class GildedRose {
 

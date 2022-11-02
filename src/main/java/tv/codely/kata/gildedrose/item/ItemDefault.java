@@ -1,6 +1,6 @@
-package tv.codely.kata.gildedrose.model.item;
+package tv.codely.kata.gildedrose.item;
 
-final class ItemDefault extends ItemUpdatable{
+final class ItemDefault extends ItemUpdatable {
 
   private static final int DECREASE_QUALITY_THRESHOLD = 0;
 
