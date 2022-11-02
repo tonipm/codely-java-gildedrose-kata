@@ -4,7 +4,7 @@ final class AgedBrie extends ItemUpdatable {
 
   private static final int INCREASE_QUALITY_THRESHOLD = 0;
 
-  AgedBrie(final ItemName name, final ItemSellIn sellIn, final int quality) {
+  AgedBrie(final ItemName name, final ItemSellIn sellIn, final ItemQuality quality) {
     super(name, sellIn, quality);
   }
 
