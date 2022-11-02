@@ -1,14 +1,12 @@
 package tv.codely.kata.gildedrose;
 
 abstract class ItemUpdatable implements Item {
-  private static final int MIN_QUALITY = 0;
-  private static final int MAX_QUALITY = 50;
 
   private final ItemName name;
   private ItemSellIn sellIn;
-  private int quality;
+  private ItemQuality quality;
 
-  public ItemUpdatable(final ItemName name, final ItemSellIn sellIn, final int quality) {
+  public ItemUpdatable(final ItemName name, final ItemSellIn sellIn, final ItemQuality quality) {
     this.name = name;
     this.sellIn = sellIn;
     this.quality = quality;
@@ -18,28 +16,24 @@ abstract class ItemUpdatable implements Item {
 
   @Override
   public ItemSellIn sellIn() {
-    return this.sellIn;
+    return sellIn;
   }
 
   @Override
-  public int quality() {
-    return this.quality;
+  public ItemQuality quality() {
+    return quality;
   }
 
   void resetQuality() {
-    this.quality = 0;
+    quality = quality.reset();
   }
 
   void increaseQuality() {
-    if (this.quality < MAX_QUALITY) {
-      this.quality += 1;
-    }
+    quality = quality.increase();
   }
 
   void decreaseQuality() {
-    if (this.quality > MIN_QUALITY) {
-      this.quality -= 1;
-    }
+    quality = quality.decrease();
   }
 
   void decreaseSellIn() {
