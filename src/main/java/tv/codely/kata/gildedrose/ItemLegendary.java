@@ -1,8 +1,8 @@
-package tv.codely.kata.gildedrose.item;
+package tv.codely.kata.gildedrose;
 
 class ItemLegendary extends ItemUpdatable {
 
-  ItemLegendary(final ItemName name, int sellIn, int quality) {
+  ItemLegendary(final ItemName name, ItemSellIn sellIn, int quality) {
     super(name, sellIn, quality);
   }
 
