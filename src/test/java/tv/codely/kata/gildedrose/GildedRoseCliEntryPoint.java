@@ -1,10 +1,14 @@
 package tv.codely.kata.gildedrose;
 
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
 public class GildedRoseCliEntryPoint {
     public static void main(String[] args) {
         System.out.println("OMGHAI!");
 
-        Item[] items = new Item[] {
+        List<Item> items = Collections.unmodifiableList(Arrays.asList(
             ItemBuilder.from("+5 Dexterity Vest", 10, 20), //
             ItemBuilder.from("Aged Brie", 2, 0), //
             ItemBuilder.from("Elixir of the Mongoose", 5, 7), //
@@ -13,10 +17,10 @@ public class GildedRoseCliEntryPoint {
             ItemBuilder.from("Backstage passes to a TAFKAL80ETC concert", 15, 20),
             ItemBuilder.from("Backstage passes to a TAFKAL80ETC concert", 10, 49),
             ItemBuilder.from("Backstage passes to a TAFKAL80ETC concert", 5, 49),
-                // this conjured item does not work properly yet
-            ItemBuilder.from("Conjured Mana Cake", 3, 6) };
+            // this conjured item does not work properly yet
+            ItemBuilder.from("Conjured Mana Cake", 3, 6)));
 
-        GildedRose app = new GildedRose(items);
+        GildedRose app = new GildedRose();
 
         int days = 2;
         if (args.length > 0) {
@@ -30,7 +34,7 @@ public class GildedRoseCliEntryPoint {
                 System.out.println(item);
             }
             System.out.println();
-            app.updateQuality();
+            app.updateQuality(items);
         }
     }
 
