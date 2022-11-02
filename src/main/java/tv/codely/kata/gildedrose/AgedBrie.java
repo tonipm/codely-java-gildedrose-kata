@@ -1,6 +1,6 @@
 package tv.codely.kata.gildedrose;
 
-final class AgedBrie extends ItemUpdatable {
+final class AgedBrie extends UpdatableItem {
 
   private static final int INCREASE_QUALITY_THRESHOLD = 0;
 

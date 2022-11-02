@@ -1,6 +1,6 @@
 package tv.codely.kata.gildedrose;
 
-final class BackstagePasses extends ItemUpdatable {
+final class BackstagePasses extends UpdatableItem {
 
     private static final int INCREASE_QUALITY_01_THRESHOLD = 10;
     private static final int INCREASE_QUALITY_02_THRESHOLD = 5;

@@ -11,6 +11,6 @@ public final class ItemBuilder {
   if (name.isBackstagePasses()) return new BackstagePasses(name, sellIn, quality);
   if (name.isSulfuras()) return new Sulfuras(name, sellIn, quality);
 
-  return new ItemDefault(name, sellIn, quality);
+  return new DefaultItem(name, sellIn, quality);
  }
 }
