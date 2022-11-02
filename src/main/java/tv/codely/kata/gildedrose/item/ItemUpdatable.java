@@ -4,11 +4,11 @@ abstract class ItemUpdatable implements Item {
   private static final int MIN_QUALITY = 0;
   private static final int MAX_QUALITY = 50;
 
-  private final String name;
+  private final ItemName name;
   private int sellIn;
   private int quality;
 
-  public ItemUpdatable(String name, int sellIn, int quality) {
+  public ItemUpdatable(final ItemName name, final int sellIn, final int quality) {
     this.name = name;
     this.sellIn = sellIn;
     this.quality = quality;

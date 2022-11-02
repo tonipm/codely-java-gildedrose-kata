@@ -4,7 +4,7 @@ final class AgedBrie extends ItemUpdatable {
 
   private static final int INCREASE_QUALITY_THRESHOLD = 0;
 
-  AgedBrie(final String name, final int sellIn, final int quality) {
+  AgedBrie(final ItemName name, final int sellIn, final int quality) {
     super(name, sellIn, quality);
   }
 
