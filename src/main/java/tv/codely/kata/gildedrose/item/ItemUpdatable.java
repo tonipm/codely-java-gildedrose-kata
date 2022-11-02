@@ -1,4 +1,4 @@
-package tv.codely.kata.gildedrose.model.item;
+package tv.codely.kata.gildedrose.item;
 
 abstract class ItemUpdatable implements Item {
   private static final int MIN_QUALITY = 0;
