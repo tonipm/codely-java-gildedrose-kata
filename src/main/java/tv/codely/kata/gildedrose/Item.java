@@ -1,8 +1,8 @@
-package tv.codely.kata.gildedrose.item;
+package tv.codely.kata.gildedrose;
 
 public interface Item {
 
   void update();
-  int sellIn();
+  ItemSellIn sellIn();
   int quality();
 }

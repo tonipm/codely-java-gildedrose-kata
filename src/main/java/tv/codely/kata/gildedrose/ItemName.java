@@ -1,4 +1,4 @@
-package tv.codely.kata.gildedrose.item;
+package tv.codely.kata.gildedrose;
 
 import java.util.Objects;
 

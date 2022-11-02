@@ -1,7 +1,5 @@
 package tv.codely.kata.gildedrose;
 
-import tv.codely.kata.gildedrose.item.Item;
-
 class GildedRose {
 
   private final Item[] items;
