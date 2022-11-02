@@ -1,16 +1,10 @@
 package tv.codely.kata.gildedrose;
 
-class GildedRose {
+import java.util.List;
 
-  private final Item[] items;
+final class GildedRose {
 
-  public GildedRose(Item[] items) {
-    this.items = items;
-  }
-
-  public void updateQuality() {
-    for (Item item : items) {
-      item.update();
-    }
+  public void updateQuality(List<Item> items) {
+    items.forEach(Item::update);
   }
 }
