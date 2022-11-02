@@ -4,7 +4,7 @@ final class ItemDefault extends ItemUpdatable {
 
   private static final int DECREASE_QUALITY_THRESHOLD = 0;
 
-  ItemDefault(final ItemName name, ItemSellIn sellIn, int quality) {
+  ItemDefault(final ItemName name, ItemSellIn sellIn, ItemQuality quality) {
     super(name, sellIn, quality);
   }
 

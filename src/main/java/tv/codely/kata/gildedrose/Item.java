@@ -4,5 +4,5 @@ public interface Item {
 
   void update();
   ItemSellIn sellIn();
-  int quality();
+  ItemQuality quality();
 }
